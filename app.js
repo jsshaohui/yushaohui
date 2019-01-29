@@ -4,8 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var indexRouter = require('./routes/admin/index'); //后台页面路由
+var clientRouter = require('./routes/client/index'); //前台页面路由
 
 var app = express();
 
@@ -19,8 +19,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// 后台页面路由挂载
+for(var i in indexRouter){
+  app.use('/admin',indexRouter[i]);
+}
+// 前台页面路由挂载
+for(var i in clientRouter){
+  app.use('/client',clientRouter[i]);
+}
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
