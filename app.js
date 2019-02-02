@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/admin/index'); //后台页面路由
 var clientRouter = require('./routes/client/index'); //前台页面路由
 
+var adminapiRouter = require('./api/admin/index'); //后台api路由
+
 var app = express();
 
 // view engine setup
@@ -26,6 +28,11 @@ for(var i in indexRouter){
 // 前台页面路由挂载
 for(var i in clientRouter){
   app.use('/client',clientRouter[i]);
+}
+
+// 后台api
+for(var i in adminapiRouter){
+  app.use('/api/admin'+i,adminapiRouter[i]);
 }
 
 

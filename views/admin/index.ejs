@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="/javascripts/jquery.min.js"></script>
 </head>
+
 <body>
-    <p>后台登录页面</p>
+  <p>后台登录页面</p>
 </body>
+
+<script>
+
+  $.ajax({
+    type: 'post',
+    url: '/api/admin/user/search_user',
+    success: function (e) {
+      debugger
+    },
+    error: function (e) {
+      debugger
+    }
+  })
+</script>
+
 </html>
