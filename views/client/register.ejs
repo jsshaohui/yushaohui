@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+    <p>这是顾客注册页面</p>
+    
+    <script>
+        $.ajax({
+            type:'post',
+            url:'/api/client/user/add_users',
+            data:{
+                'name':'张三',
+                'sex':'男',
+                'cardtype':'身份证',
+                'cardnum':'610232323232345353',
+                'phone':'18829292929',
+            },
+            success:function(e){
+                debugger
+            }
+        })
+    </script>
+</body>
+</html>

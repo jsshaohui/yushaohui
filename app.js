@@ -8,6 +8,7 @@ var indexRouter = require('./routes/admin/index'); //后台页面路由
 var clientRouter = require('./routes/client/index'); //前台页面路由
 
 var adminapiRouter = require('./api/admin/index'); //后台api路由
+var clientapiRouter = require('./api/client/index'); //前台api路由
 
 var app = express();
 
@@ -34,9 +35,10 @@ for(var i in clientRouter){
 for(var i in adminapiRouter){
   app.use('/api/admin'+i,adminapiRouter[i]);
 }
-
-
-
+// 前台api
+for(var i in clientapiRouter){
+  app.use('/api/client'+i,clientapiRouter[i]);
+}
 
 
 // catch 404 and forward to error handler
