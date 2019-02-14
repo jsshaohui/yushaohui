@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+    <p>后台大堂提交订单页面</p>
+    <button class="submit">提交</button>
+</body>
+<script>
+    $('.submit').on('click',function(){
+        $.ajax({
+            type:'post',
+            url:'/api/admin/order/add_order',
+            data:{
+                'id':123435433,
+                'rid':201,
+                'rtid':10001,
+                'entertime':34543445454,
+                'leavetime':2345678,
+                'orderway':'网上预订',
+                'enter':false,
+                'count':1110,
+                'state':false,
+            },
+            success:function(e){
+                debugger
+            },
+            error:function(e){
+                debugger
+            }
+            
+        })
+    })
+</script>
+</html>

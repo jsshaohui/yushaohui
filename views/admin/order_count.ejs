@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <p>订单列表</p>
+    <button class="name">根据条件查询</button>
+</body>
+<!-- 查询所有 -->
+<script>
+    $('.name').on('click', function () {
+        $.ajax({
+            type: 'post',
+            url: '/api/admin/order/search_order_info',
+            data: {
+                'rid': 201,
+            },
+            success: function (e) {
+                debugger
+            }
+        })
+    })
+
+</script>
+
+</html>

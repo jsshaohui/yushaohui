@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <p>这是房间列表</p>
+    <button class="update">修改</button>
+    <button class="del">删除</button>
+</body>
+<script>
+    $.ajax({
+        type: 'post',
+        url: '/api/admin/room/room_list',
+        success: function (e) {
+            debugger
+        },
+        error: function (e) {
+            debugger
+        }
+    })
+    $('.update').on('click', function () {
+        $.ajax({
+            type: 'post',
+            url: '/api/admin/room/update_room',
+            data: {
+                'id': 101,
+                "detail": '修改描述',
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+    $('.del').on('click', function () {
+        $.ajax({
+            type: 'post',
+            url: '/api/admin/room/delete_room',
+            data: {
+                'id': 102,
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+</script>
+
+</html>

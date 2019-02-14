@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <p>新增房间页面</p>
+    <button class="add">新增</button>
+</body>
+<script>
+    $('.add').on('click', function () {
+         $.ajax({
+            type: 'post',
+            url: '/api/admin/room/add_room',
+            data: {
+                'id':201,
+                'type':10001,
+                'location':'二楼',
+                'state':false,
+                'detail':'我是房间描述',
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+    $('.del').on('click', function () {
+         $.ajax({
+            type: 'post',
+            url: '/api/admin/roomt/delete_roomt',
+            data: {
+                'id':3,
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+</script>
+
+</html>

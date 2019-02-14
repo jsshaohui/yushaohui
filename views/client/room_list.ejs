@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+    <p>在线订单预订页面</p>
+    <button class="lc">户型查找</button>
+</body>
+    <script>
+        $.ajax({
+            type:'post',
+            url:'/api/admin/room/search_room',
+            success:function(e){
+                debugger
+            },
+            error:function(e){
+                debugger
+            }
+        })
+        $('.lc').on('click',function(e){
+            $.ajax({
+            type:'post',
+            url:'/api/admin/room/search_room',
+            data:{'name':'标准(单人)间'},
+            success:function(e){
+                debugger
+            },
+            error:function(e){
+                debugger
+            }
+        }) 
+        })
+    </script>
+</html>

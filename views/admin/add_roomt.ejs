@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/javascripts/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <p>这是房间类型新增页面</p>
+    <button class="update">修改</button>
+    <button class="del">删除</button>
+</body>
+<script>
+    // 新增房型
+    // $.ajax({
+    //     type: 'post',
+    //     url: '/api/admin/roomt/add_roomt',
+    //     data: {
+    //         'id':10006,
+    //         'name':'豪华套间',
+    //         'acreage':110,
+    //         'bednum':1,
+    //         'hasfood':true,
+    //         'hasnet':true,
+    //         'hastv':true,
+    //         'haswc':true,
+    //         'totalnum':3,
+    //         'leftnum':3,
+    //         'hourprice':20,
+    //         'dayprice':280,
+    //         'monthprice':8400,
+    //     },
+    //     success: function (e) {
+    //         debugger
+    //     },
+    //     error: function (e) {
+    //         debugger
+    //     }
+    // })
+    $('.update').on('click', function () {
+         $.ajax({
+            type: 'post',
+            url: '/api/admin/roomt/update_roomt',
+            data: {
+                'id':2,
+                'name':'豪华间',
+                'acreage':50,
+                'bednum':2,
+                'hasfood':true,
+                'hasnet':true,
+                'hastv':true,
+                'haswc':true,
+                'totalnum':10,
+                'leftnum':10,
+                'hourprice':10,
+                'dayprice':120,
+                'monthprice':3600,
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+    $('.del').on('click', function () {
+         $.ajax({
+            type: 'post',
+            url: '/api/admin/roomt/delete_roomt',
+            data: {
+                'id':3,
+            },
+            success: function (e) {
+                debugger
+            },
+            error: function (e) {
+                debugger
+            }
+        })
+    })
+</script>
+
+</html>
